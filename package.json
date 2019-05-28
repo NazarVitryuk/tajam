@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "build-css": "node-sass --include-path scss public/styles/main.scss public/styles/main.css",
     "watch-css": "nodemon -e scss,ejs -x \"npm run build-css & nodemon index.js\""
   },
