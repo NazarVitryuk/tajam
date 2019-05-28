@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col video"> 
+            <video height="466px" width="100%" class="video__player border-danger" poster="images/video__poster.png" src="videos/Company Introduction Animation.mp4"></video>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(() => {
+
+        //Hide video-poster and turning on video
+
+        $(".video__player").click(() => {
+            $(".video__player").attr("controls", "");
+        });
+
+    });
+
+</script>
+

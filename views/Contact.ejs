@@ -1,0 +1,35 @@
+<div class="container page-container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h4 class="page-title text-center text-md-left">
+                give us a good news
+            </h4>
+            <div class="col-12">
+                
+                <% include components/Form %>
+
+            </div>
+            <div style="margin-top: 20px" class="col-auto">
+                
+                <%- include('components/detailsButton', {
+                    text: 'submit'
+                }) %>
+                
+            </div>
+        </div>
+        <div class="col-12 col-md-5 mt-4 mt-md-0 ml-auto">
+            <h4 class="pt-4 pt-md-0 text-center text-md-left page-title">
+                our happy client
+            </h4>
+            <div style="padding-top: 30px " class="row">
+
+            <% tajamDB.clients.forEach(function(numb){ %>
+                <div class="col-6 d-flex justify-content-center">
+                    <%- include('components/Client', {clientNumber: numb}); %>
+                </div>
+            <% }); %>
+
+            </div>
+        </div>
+    </div>
+</div>

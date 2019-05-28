@@ -1,0 +1,28 @@
+<div class="container page-container">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+        
+            <%- include('components/TextContent', {
+                title: 'expertise',
+                paragraphs: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.']
+            }) %>
+
+        </div>
+        <div class="col-12 ">
+        
+            <%- include('components/Line', {
+                color: '#c6c4c9'
+            }) %>
+
+        </div>
+    </div>
+    <div class="row">
+
+            <% tajamDB.expItems.forEach((item) => { %>
+                <div class="col-12 col-md-4">
+                    <%- include('components/ExpItem', {item: item}) %> 
+                </div>
+            <% }) %>
+
+    </div>
+</div>

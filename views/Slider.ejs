@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row slider">
+
+            <% tajamDB.slides.forEach((slide) => { %>
+                <div class="col slide text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-8 justify-content-center">
+                            <h1 class="slide__title">
+                                <%= slide.title %>
+                            </h1>
+                            <%- include('components/Line', {color: 'aqua'}); %>
+                            <p class="slide__content">
+                                <%= slide.content %>
+                            </p> 
+                        </div>
+                        <div style="margin-top: 52px" class="col-12 d-flex justify-content-center">   
+                            <%- include('components/detailsButton', {text: 'learn more'}); %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+
+            <% console.log(tajamDB.slides) %>
+
+
+    </div>
+
+    <div class="row justify-content-center">
+        <div style="margin-top: 126px" class="col-auto d-flex dots"></div>
+    </div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(() => {
+        
+        $('.slider').slick({
+            accessibility: false,
+            arrows: false,
+            autoplay: false,
+            dots: true,
+            appendDots: $(".dots")
+        });
+
+    });
+</script>

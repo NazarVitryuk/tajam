@@ -1,0 +1,40 @@
+<div class="container-fluid team-container page-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div style="color: white" class="col-6 text-center">
+
+                <%- include('components/TextContent', {
+                    title: 'Meet our amazing team',
+                    paragraphs: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.']
+                }) %>
+
+                <%- include('components/Line', {
+                    color: '#655c80'
+                }) %>
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+
+            <% tajamDB.team.forEach((person) => { %>
+                <div class="col-12 col-md-5 mt-3 mt-md-0 mb-md-4">
+                    <%- include('components/teamItem', {person: person}) %>
+                </div>
+            <% }) %>
+
+            <div class="col-12 text-center team-container__phrase">
+                <span>Become part of our dream team, let's goin us!</span>
+            </div>
+
+            <div class="col-auto">
+
+                <%- include('components/detailsButton', {
+                    text: 'we are hiring'
+                }) %>
+
+            </div>
+
+        </div>
+    </div>
+</div>

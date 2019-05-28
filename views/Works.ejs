@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center worksHeader">
+                <span class="page-title d-block">our works</span>
+                <a href="#" class="worksHeader__link">see all project dribble ></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include WorksList %>
+
+<div class="container page-container">
+    <div class="row justify-content-center">
+        <div class="col-6 col-lg-2 col-md-4 d-flex justify-content-center">
+
+            <%- include('components/detailsButton', {
+                text: 'load more'
+            }) %>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

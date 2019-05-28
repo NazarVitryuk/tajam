@@ -1,0 +1,25 @@
+<div class="container-fluid page-container">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                <img style="min-width: 105px" class="img-fluid pl-4" src="images/about_image.png" />
+            </div>
+            
+            <div class="col-12 col-md-7 mt-5 mt-md-0 ml-auto textContent">
+
+                <%- include('components/TextContent', {
+                    title: tajamDB.aboutInfo.title,
+                    paragraphs: tajamDB.aboutInfo.paragraphs
+                }) %>
+                
+            </div>
+
+            <div class="col-12 col-md-7 ml-auto">
+
+                <%- include('components/detailsButton', {text: 'learn more'}) %>
+
+            </div>
+        </div>
+    </div>
+</div>

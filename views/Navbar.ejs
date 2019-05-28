@@ -1,0 +1,35 @@
+<div class="container navbar-container">
+    <div class="row">
+
+        <div class="col-auto d-none d-md-flex justify-content-center">
+            <% include components/Logo %>
+        </div>
+
+        <div class="col-12 d-flex d-md-none align-items-center">
+            <% include components/HamburgerMenu %>
+        </div>
+
+        <div class="col-md-8 d-none d-md-flex ml-auto navigation-list">
+
+                <%- include('components/Navigation', {
+                    navItems: ['home', 'about', 'expertise', 'teams', 'works', 'people say', 'contact']
+                }); %>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(() => {
+
+        var hamburger = $(".hamburger");
+        var isActive = false;
+
+        hamburger.on("click", () => {
+            isActive ? hamburger.removeClass("is-active") : hamburger.addClass("is-active");
+            isActive = !isActive;
+        });
+
+    });
+</script>

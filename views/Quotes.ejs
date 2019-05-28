@@ -1,0 +1,83 @@
+<div class="container-fluid quotes-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 justify-content-center text-center quotes">
+                <span class="quotes__title">’’</span>
+                <p class="quotes__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="quotes__info">
+                    <h4 class="quotes__info__name">jane galadriel</h4>
+                    <h4 class="quotes__info__position">ceo tengkuper</h4>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row justify-content-center">
+                    <div class="col-auto col-md-12 d-flex justify-content-center persons">
+                        <button class="persons__arrowLeft">
+                            <i class="fas fa-angle-left"></i>    
+                        </button>
+
+                        <% tajamDB.quotes.forEach((person, index) => { %>
+                            <div style="order: <%= index + 1 %>" class="col-auto d-flex person">
+                                <% if(index == 2) { %>
+                                    <img class="person__image person__image-active img-fluid" src="<%= person.image %>" />
+                                <% } else { %>
+                                    <img class="person__image" src="<%= person.image %>" />
+                                <% } %>
+                            </div>
+                        <% }) %>
+
+                        <button class="persons__arrowRight">
+                            <i class="fas fa-angle-right"></i>    
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(() => {
+
+      var arr = [...$(".person")];
+
+      // move list right of persons right
+
+      $(".persons__arrowRight").on('click', () => {
+        arr.forEach((elem) => {
+            var order = Number($(elem).css('order'));
+            if(order == arr.length) {
+                $(elem).css('order', 1)
+            } else {
+                $(elem).css('order', order + 1)
+                if(order == 2) {
+                    $(elem).children().addClass("person__image-active")
+                    console.log($(elem).children())
+                } else {
+                    $(elem).children().removeClass("person__image-active")
+                }
+            }
+        });
+    });
+
+    // move list right of persons left
+
+    $(".persons__arrowLeft").on("click", () => {
+        arr.forEach((elem) => {
+            var order = Number($(elem).css('order'));
+            if(order == 1) {
+                $(elem).css('order', arr.length) 
+            } else {
+                $(elem).css('order', order - 1) 
+            } if(order == 4) {
+                $(elem).children().addClass("person__image-active")
+            } else {
+                $(elem).children().removeClass("person__image-active")
+            }
+        });
+    });
+
+});
+
+</script>

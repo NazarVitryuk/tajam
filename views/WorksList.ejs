@@ -1,0 +1,15 @@
+<div class="container-fluid p-0">
+        <div class="row no-gutters">
+
+                <% tajamDB.works.forEach((numb) => { %>
+                    <div class="col-12 mt-2 mt-md-0 col-lg-2 col-md-4">
+        
+                        <%- include('components/Work', {
+                            number: numb
+                        }) %>
+        
+                    </div>
+                <% }) %>
+        
+            </div>
+</div>
