@@ -288,16 +288,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; }
+    margin-top: 10px; }
   .footer-block__social-icon {
     margin-right: 5px;
+    color: white;
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     border: 1px Solid;
     border-radius: 20px;
     height: 34px;
     width: 36px; }
+    .footer-block__social-icon:hover {
+      color: aqua; }
 
 .footer-title {
   font-family: Roboto-black;
@@ -379,15 +383,14 @@
 #menu {
   position: absolute;
   width: 300px;
-  margin: -100px 0 0 -183px;
+  margin: -100px 0 0 -170px;
   padding: 50px;
   padding-top: 125px;
   background: #00BCD4;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
-  transform: translate(100%, 0);
+  transform: translate(140%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
 
 #menuToggle input:checked ~ ul {
